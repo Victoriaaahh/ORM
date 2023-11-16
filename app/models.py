@@ -15,7 +15,7 @@ class Usuario(models.Model):
 class Postagem(models.Model):
     id = models.AutoField(primary_key=True)
     conteudo = models.CharField(max_length=140)
-    data = models.DateTimeField(default=models.now)
+    data = models.DateTimeField(auto_now_add = True)
     usuario = models.ForeignKey(Usuario, on_delete=models.CASCADE)
 
 class Comentario(models.Model):
@@ -23,12 +23,12 @@ class Comentario(models.Model):
     usuario = models.ForeignKey(Usuario, on_delete=models.CASCADE)
     postagem = models.ForeignKey(Postagem, on_delete=models.CASCADE)
     conteudo = models.CharField(max_length=140)
-    data = models.DateTimeField(default=models.now)
+    data = models.DateTimeField(auto_now_add = True)
 
 class Reacao(models.Model):
     postagem = models.ForeignKey(Postagem, on_delete=models.CASCADE)
     usuario = models.ForeignKey(Usuario, on_delete=models.CASCADE)
-    data = models.DateTimeField(default=models.now)
+    data = models.DateTimeField(auto_now_add = True)
 
     class Meta:
         unique_together = ('postagem', 'usuario')
