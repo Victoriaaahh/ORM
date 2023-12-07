@@ -7,7 +7,6 @@ django.setup()
 from django.db.models import Count, Case, When, Value, CharField
 from app.models import Postagem, Comentario
 
-#mude o 4 pelo id de quem voce deseja consultar
 postagem_escolhida = Postagem.objects.get(id=1)
 
 comentarios_da_postagem = Comentario.objects.filter(postagem=postagem_escolhida)

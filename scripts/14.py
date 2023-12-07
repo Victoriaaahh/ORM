@@ -7,7 +7,6 @@ django.setup()
 from django.db.models import Count, Case, When, Value, CharField
 from app.models import Postagem, Reacao, Usuario
 
-#substitua 1 pelo ID da postagem desejada
 postagem_escolhida = Postagem.objects.get(id=1)
 
 reacoes_da_postagem = Reacao.objects.filter(postagem=postagem_escolhida)

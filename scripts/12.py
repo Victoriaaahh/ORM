@@ -7,7 +7,6 @@ django.setup()
 from django.db.models import Count, Case, When, Value, CharField
 from app.models import Usuario, Postagem
 
-#mude o 4 pelo id de quem voce deseja consultar
 usuario_escolhido = Usuario.objects.get(id=4)
 
 numero_postagens_usuario = Postagem.objects.filter(usuario=usuario_escolhido).count()

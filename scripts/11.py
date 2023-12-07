@@ -6,7 +6,6 @@ django.setup()
 
 from app.models import Usuario, Postagem
 
-#mude o 4 pelo id de quem voce deseja consultar
 usuario_escolhido = Usuario.objects.get(id=4)
 
 postagens_do_usuario = Postagem.objects.filter(usuario=usuario_escolhido)
